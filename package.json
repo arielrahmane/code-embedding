@@ -1,0 +1,20 @@
+{
+  "name": "rag-sdgen",
+  "version": "1.0.0",
+  "description": "RAG system for SD Generation Action in Hasura",
+  "main": "index.ts",
+  "author": "Ariel Rahmane",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start:parse": "ts-node src/code-parser.ts"
+  },
+  "dependencies": {
+    "ts-morph": "^24.0.0",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "ts-node": "^10.9.2"
+  }
+}
