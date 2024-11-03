@@ -5,7 +5,7 @@ import torch
 
 # Load embedding model
 model_prefix_name = "microsoft/"
-model_base_name = "codebert-base"
+model_base_name = "graphcodebert-base"
 model_name = model_prefix_name + model_base_name
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
@@ -17,7 +17,7 @@ def get_embedding(text, pooling_strategy="mean"):
     if pooling_strategy == "mean":
         embedding = outputs.last_hidden_state.mean(dim=1)
     elif pooling_strategy == "cls":
-        embedding = outputs.last_hidden_state[:, 0, :]  # CLS token
+        embedding = outputs.last_hidden_state[:, 0, :]
     return embedding.detach().numpy()
 
 def compute_similarity(embedding1, embedding2):
