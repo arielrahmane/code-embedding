@@ -9,7 +9,7 @@ model_base_name = "codebert-base"
 model_name = model_prefix_name + model_base_name
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
-pooling_strategy = "mean"
+pooling_strategy = "cls"
 
 def get_embedding(text, pooling_strategy="mean"):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
@@ -43,7 +43,13 @@ for block in data["codeBlocks"]:
   # Store similarity results for this code block
   block_results = {
     "code": code,
+    "codeEmbedding": code_embedding.tolist(),  # Store the code embedding as a list for JSON serialization
     "similarityScores": {
+      "similar": None,
+      "moderatelySimilar": None,
+      "notSimilar": None
+    },
+    "descriptionEmbeddings": {  # Store embeddings for each description
       "similar": None,
       "moderatelySimilar": None,
       "notSimilar": None
@@ -55,6 +61,7 @@ for block in data["codeBlocks"]:
     description_embedding = get_embedding(description_text, pooling_strategy)
     similarity_score = compute_similarity(code_embedding, description_embedding)
     block_results["similarityScores"][description_type] = similarity_score
+    block_results["descriptionEmbeddings"][description_type] = description_embedding.tolist()  # Store as list for JSON serialization
 
   # Append results for this block to the results container
   results["codeBlocks"].append(block_results)
