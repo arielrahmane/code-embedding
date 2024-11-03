@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import os
 
 openai.api_key = os.getenv("OPENAI_API_KEY") 
-openai_model = "text-embedding-ada-002"
+openai_model = "text-embedding-3-large"
 
 def get_openai_embedding(text, model_name):
     """Function to get embeddings from OpenAI's API."""
