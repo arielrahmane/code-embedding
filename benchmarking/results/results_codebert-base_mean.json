@@ -1,5 +1,6 @@
 {
     "model": "microsoft/codebert-base",
+    "pooling_strategy": "mean",
     "codeBlocks": [
         {
             "code": "function greetUser(name: string): string {\n    return `Hello, ${name}!`;\n}",

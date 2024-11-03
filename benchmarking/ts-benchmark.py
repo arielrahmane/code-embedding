@@ -4,16 +4,21 @@ from sklearn.metrics.pairwise import cosine_similarity
 import torch
 
 # Load embedding model
-model_name = "microsoft/codebert-base"  # You can replace this with other models to benchmark
+model_prefix_name = "microsoft/"
+model_base_name = "codebert-base"
+model_name = model_prefix_name + model_base_name
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
+pooling_strategy = "mean"
 
-def get_embedding(text):
-  """Function to compute the embedding of a given text or code."""
-  inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
-  outputs = model(**inputs)
-  embedding = outputs.last_hidden_state.mean(dim=1)
-  return embedding.detach().numpy()
+def get_embedding(text, pooling_strategy="mean"):
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
+    outputs = model(**inputs)
+    if pooling_strategy == "mean":
+        embedding = outputs.last_hidden_state.mean(dim=1)
+    elif pooling_strategy == "cls":
+        embedding = outputs.last_hidden_state[:, 0, :]  # CLS token
+    return embedding.detach().numpy()
 
 def compute_similarity(embedding1, embedding2):
   """Function to compute cosine similarity between two embeddings."""
@@ -25,7 +30,7 @@ with open("benchmark_inputs.json", "r") as f:
   data = json.load(f)
 
 # Initialize results container
-results = {"model": model_name, "codeBlocks": []}
+results = {"model": model_name, "pooling_strategy": pooling_strategy, "codeBlocks": []}
 
 # Iterate over each code block in the JSON data
 for block in data["codeBlocks"]:
@@ -47,7 +52,7 @@ for block in data["codeBlocks"]:
 
   # Iterate over each description type and compute similarity
   for description_type, description_text in descriptions.items():
-    description_embedding = get_embedding(description_text)
+    description_embedding = get_embedding(description_text, pooling_strategy)
     similarity_score = compute_similarity(code_embedding, description_embedding)
     block_results["similarityScores"][description_type] = similarity_score
 
@@ -55,7 +60,7 @@ for block in data["codeBlocks"]:
   results["codeBlocks"].append(block_results)
 
 # Save results to a new JSON file
-with open("results_codebert-base.json", "w") as f:
+with open("results/results_" + model_base_name + "_" + pooling_strategy + ".json", "w") as f:
   json.dump(results, f, indent=4)
 
 print("Benchmarking completed. Results saved to results.json.")

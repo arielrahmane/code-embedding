@@ -1,0 +1,70 @@
+{
+    "model": "microsoft/codebert-base",
+    "pooling_strategy": "cls",
+    "codeBlocks": [
+        {
+            "code": "function greetUser(name: string): string {\n    return `Hello, ${name}!`;\n}",
+            "similarityScores": {
+                "similar": 0.6539883017539978,
+                "moderatelySimilar": 0.6539328694343567,
+                "notSimilar": 0.6698830723762512
+            }
+        },
+        {
+            "code": "interface Person {\n    name: string;\n    age: number;\n    isEmployed: boolean;\n}\n\nconst person: Person = {\n    name: 'Alice',\n    age: 25,\n    isEmployed: true\n};",
+            "similarityScores": {
+                "similar": 0.620866596698761,
+                "moderatelySimilar": 0.6285240650177002,
+                "notSimilar": 0.6376245617866516
+            }
+        },
+        {
+            "code": "function calculateSum(numbers: number[]): number {\n    return numbers.reduce((acc, curr) => acc + curr, 0);\n}",
+            "similarityScores": {
+                "similar": 0.6226954460144043,
+                "moderatelySimilar": 0.6163628101348877,
+                "notSimilar": 0.6241142153739929
+            }
+        },
+        {
+            "code": "class Car {\n    private speed: number;\n\n    constructor(speed: number) {\n        this.speed = speed;\n    }\n\n    accelerate(amount: number): void {\n        this.speed += amount;\n    }\n\n    getSpeed(): number {\n        return this.speed;\n    }\n}",
+            "similarityScores": {
+                "similar": 0.5812202095985413,
+                "moderatelySimilar": 0.5819076895713806,
+                "notSimilar": 0.5807111263275146
+            }
+        },
+        {
+            "code": "function isEven(num: number): boolean {\n    return num % 2 === 0;\n}",
+            "similarityScores": {
+                "similar": 0.662915825843811,
+                "moderatelySimilar": 0.6531574726104736,
+                "notSimilar": 0.6685732007026672
+            }
+        },
+        {
+            "code": "type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'canceled';\n\nfunction updateOrderStatus(status: OrderStatus): string {\n    return `Order status updated to ${status}.`;\n}",
+            "similarityScores": {
+                "similar": 0.5988593101501465,
+                "moderatelySimilar": 0.5916677713394165,
+                "notSimilar": 0.6008999943733215
+            }
+        },
+        {
+            "code": "function findMax(numbers: number[]): number | null {\n    if (numbers.length === 0) return null;\n    return Math.max(...numbers);\n}",
+            "similarityScores": {
+                "similar": 0.5754649043083191,
+                "moderatelySimilar": 0.5985498428344727,
+                "notSimilar": 0.5931332111358643
+            }
+        },
+        {
+            "code": "interface Animal {\n    name: string;\n    age: number;\n}\n\nclass Dog implements Animal {\n    name: string;\n    age: number;\n\n    constructor(name: string, age: number) {\n        this.name = name;\n        this.age = age;\n    }\n\n    bark(): string {\n        return 'Woof!';\n    }\n}",
+            "similarityScores": {
+                "similar": 0.5638929605484009,
+                "moderatelySimilar": 0.5611991882324219,
+                "notSimilar": 0.5548259019851685
+            }
+        }
+    ]
+}
