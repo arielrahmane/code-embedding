@@ -1,0 +1,68 @@
+{
+  "codeBlocks": [
+    {
+      "code": "function greetUser(name: string): string {\n    return `Hello, ${name}!`;\n}",
+      "descriptions": {
+        "similar": "A function that takes a user's name and returns a greeting message.",
+        "notSimilar": "This function calculates the area of a rectangle given width and height.",
+        "moderatelySimilar": "A function that returns a personalized message based on the provided input."
+      }
+    },
+    {
+      "code": "interface Person {\n    name: string;\n    age: number;\n    isEmployed: boolean;\n}\n\nconst person: Person = {\n    name: 'Alice',\n    age: 25,\n    isEmployed: true\n};",
+      "descriptions": {
+        "similar": "An interface defining a Person with properties for name, age, and employment status, and an object that conforms to it.",
+        "notSimilar": "This class calculates the salary based on hours worked and hourly rate.",
+        "moderatelySimilar": "An object representing a person with various attributes."
+      }
+    },
+    {
+      "code": "function calculateSum(numbers: number[]): number {\n    return numbers.reduce((acc, curr) => acc + curr, 0);\n}",
+      "descriptions": {
+        "similar": "A function that calculates the sum of an array of numbers.",
+        "notSimilar": "This function checks if a string is a palindrome.",
+        "moderatelySimilar": "A function that performs an operation on an array of numbers."
+      }
+    },
+    {
+      "code": "class Car {\n    private speed: number;\n\n    constructor(speed: number) {\n        this.speed = speed;\n    }\n\n    accelerate(amount: number): void {\n        this.speed += amount;\n    }\n\n    getSpeed(): number {\n        return this.speed;\n    }\n}",
+      "descriptions": {
+        "similar": "A class representing a Car with methods to accelerate and get its current speed.",
+        "notSimilar": "This is a utility function that generates random colors.",
+        "moderatelySimilar": "A class with properties and methods to manage an object’s speed."
+      }
+    },
+    {
+      "code": "function isEven(num: number): boolean {\n    return num % 2 === 0;\n}",
+      "descriptions": {
+        "similar": "A function that checks if a given number is even.",
+        "notSimilar": "This function sorts an array of numbers in ascending order.",
+        "moderatelySimilar": "A function that evaluates a number based on a specific condition."
+      }
+    },
+    {
+      "code": "type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'canceled';\n\nfunction updateOrderStatus(status: OrderStatus): string {\n    return `Order status updated to ${status}.`;\n}",
+      "descriptions": {
+        "similar": "A function that updates the status of an order using predefined status values.",
+        "notSimilar": "This function calculates the factorial of a number recursively.",
+        "moderatelySimilar": "A function that updates a status based on provided values."
+      }
+    },
+    {
+      "code": "function findMax(numbers: number[]): number | null {\n    if (numbers.length === 0) return null;\n    return Math.max(...numbers);\n}",
+      "descriptions": {
+        "similar": "A function that finds the maximum number in an array, returning null if the array is empty.",
+        "notSimilar": "This function generates a random password based on given parameters.",
+        "moderatelySimilar": "A function that processes an array of numbers and returns a specific result."
+      }
+    },
+    {
+      "code": "interface Animal {\n    name: string;\n    age: number;\n}\n\nclass Dog implements Animal {\n    name: string;\n    age: number;\n\n    constructor(name: string, age: number) {\n        this.name = name;\n        this.age = age;\n    }\n\n    bark(): string {\n        return 'Woof!';\n    }\n}",
+      "descriptions": {
+        "similar": "A class representing a Dog that implements an Animal interface and includes a bark method.",
+        "notSimilar": "A function that converts Celsius temperatures to Fahrenheit.",
+        "moderatelySimilar": "A class with attributes and methods related to animals."
+      }
+    }
+  ]
+}
