@@ -1,0 +1,63 @@
+model,code,similar_score,moderately_similar_score,not_similar_score
+microsoft/codebert-base,"function greetUser(name: string): string {
+    return `Hello, ${name}!`;
+}",0.9161356687545776,0.9259531497955322,0.9236992597579956
+microsoft/codebert-base,"interface Person {
+    name: string;
+    age: number;
+    isEmployed: boolean;
+}
+
+const person: Person = {
+    name: 'Alice',
+    age: 25,
+    isEmployed: true
+};",0.9494866728782654,0.930520236492157,0.9334625601768494
+microsoft/codebert-base,"function calculateSum(numbers: number[]): number {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}",0.924866259098053,0.9047033190727234,0.899389922618866
+microsoft/codebert-base,"class Car {
+    private speed: number;
+
+    constructor(speed: number) {
+        this.speed = speed;
+    }
+
+    accelerate(amount: number): void {
+        this.speed += amount;
+    }
+
+    getSpeed(): number {
+        return this.speed;
+    }
+}",0.9152463674545288,0.916476309299469,0.9158779382705688
+microsoft/codebert-base,"function isEven(num: number): boolean {
+    return num % 2 === 0;
+}",0.9284309148788452,0.9273979067802429,0.9227527379989624
+microsoft/codebert-base,"type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'canceled';
+
+function updateOrderStatus(status: OrderStatus): string {
+    return `Order status updated to ${status}.`;
+}",0.9331686496734619,0.9285013675689697,0.924281656742096
+microsoft/codebert-base,"function findMax(numbers: number[]): number | null {
+    if (numbers.length === 0) return null;
+    return Math.max(...numbers);
+}",0.9190782308578491,0.9067364931106567,0.9123198986053467
+microsoft/codebert-base,"interface Animal {
+    name: string;
+    age: number;
+}
+
+class Dog implements Animal {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    bark(): string {
+        return 'Woof!';
+    }
+}",0.9191924929618835,0.9097890853881836,0.9162635803222656

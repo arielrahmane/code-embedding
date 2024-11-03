@@ -1,0 +1,63 @@
+model,code,similar_score,moderately_similar_score,not_similar_score
+text-embedding-3-large,"function greetUser(name: string): string {
+    return `Hello, ${name}!`;
+}",0.6838659002745714,0.3774379557727082,0.13334670824131165
+text-embedding-3-large,"interface Person {
+    name: string;
+    age: number;
+    isEmployed: boolean;
+}
+
+const person: Person = {
+    name: 'Alice',
+    age: 25,
+    isEmployed: true
+};",0.5906388473146744,0.5067696340105493,0.1834785066553944
+text-embedding-3-large,"function calculateSum(numbers: number[]): number {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}",0.6384567143971835,0.4375468622212747,0.05869831721515811
+text-embedding-3-large,"class Car {
+    private speed: number;
+
+    constructor(speed: number) {
+        this.speed = speed;
+    }
+
+    accelerate(amount: number): void {
+        this.speed += amount;
+    }
+
+    getSpeed(): number {
+        return this.speed;
+    }
+}",0.663527491763878,0.5161879048113743,0.06323160020079502
+text-embedding-3-large,"function isEven(num: number): boolean {
+    return num % 2 === 0;
+}",0.6326444975190313,0.37136271825998557,0.32404668363692435
+text-embedding-3-large,"type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'canceled';
+
+function updateOrderStatus(status: OrderStatus): string {
+    return `Order status updated to ${status}.`;
+}",0.6151676031904064,0.4822393298999824,0.06574550376954645
+text-embedding-3-large,"function findMax(numbers: number[]): number | null {
+    if (numbers.length === 0) return null;
+    return Math.max(...numbers);
+}",0.6531849988767615,0.4105336427591389,0.0689639543793856
+text-embedding-3-large,"interface Animal {
+    name: string;
+    age: number;
+}
+
+class Dog implements Animal {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    bark(): string {
+        return 'Woof!';
+    }
+}",0.6712812873034806,0.5076624877736295,0.09431489669628614

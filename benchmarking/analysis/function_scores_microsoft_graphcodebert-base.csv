@@ -1,0 +1,63 @@
+model,code,similar_score,moderately_similar_score,not_similar_score
+microsoft/graphcodebert-base,"function greetUser(name: string): string {
+    return `Hello, ${name}!`;
+}",0.6978744268417358,0.6543639898300171,0.6237859725952148
+microsoft/graphcodebert-base,"interface Person {
+    name: string;
+    age: number;
+    isEmployed: boolean;
+}
+
+const person: Person = {
+    name: 'Alice',
+    age: 25,
+    isEmployed: true
+};",0.7482931017875671,0.6838271617889404,0.6416925191879272
+microsoft/graphcodebert-base,"function calculateSum(numbers: number[]): number {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}",0.6802285313606262,0.6109200119972229,0.6483376026153564
+microsoft/graphcodebert-base,"class Car {
+    private speed: number;
+
+    constructor(speed: number) {
+        this.speed = speed;
+    }
+
+    accelerate(amount: number): void {
+        this.speed += amount;
+    }
+
+    getSpeed(): number {
+        return this.speed;
+    }
+}",0.6059497594833374,0.591038703918457,0.552739679813385
+microsoft/graphcodebert-base,"function isEven(num: number): boolean {
+    return num % 2 === 0;
+}",0.6797293424606323,0.620492696762085,0.6472293734550476
+microsoft/graphcodebert-base,"type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'canceled';
+
+function updateOrderStatus(status: OrderStatus): string {
+    return `Order status updated to ${status}.`;
+}",0.7184743881225586,0.7013159394264221,0.6400841474533081
+microsoft/graphcodebert-base,"function findMax(numbers: number[]): number | null {
+    if (numbers.length === 0) return null;
+    return Math.max(...numbers);
+}",0.7441616058349609,0.649728536605835,0.6146239042282104
+microsoft/graphcodebert-base,"interface Animal {
+    name: string;
+    age: number;
+}
+
+class Dog implements Animal {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    bark(): string {
+        return 'Woof!';
+    }
+}",0.667610764503479,0.6354925036430359,0.5380812883377075

@@ -1,0 +1,63 @@
+model,code,similar_score,moderately_similar_score,not_similar_score
+text-embedding-ada-002,"function greetUser(name: string): string {
+    return `Hello, ${name}!`;
+}",0.877703348357058,0.7568744465916014,0.6785339026912354
+text-embedding-ada-002,"interface Person {
+    name: string;
+    age: number;
+    isEmployed: boolean;
+}
+
+const person: Person = {
+    name: 'Alice',
+    age: 25,
+    isEmployed: true
+};",0.8809086248670195,0.8093692244483666,0.7154490060445575
+text-embedding-ada-002,"function calculateSum(numbers: number[]): number {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}",0.8670676237195201,0.8006359948541453,0.6576844737891008
+text-embedding-ada-002,"class Car {
+    private speed: number;
+
+    constructor(speed: number) {
+        this.speed = speed;
+    }
+
+    accelerate(amount: number): void {
+        this.speed += amount;
+    }
+
+    getSpeed(): number {
+        return this.speed;
+    }
+}",0.8901693802775029,0.8377320653542571,0.6624099450884373
+text-embedding-ada-002,"function isEven(num: number): boolean {
+    return num % 2 === 0;
+}",0.8604827037078209,0.7344500425724106,0.6919957369302995
+text-embedding-ada-002,"type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'canceled';
+
+function updateOrderStatus(status: OrderStatus): string {
+    return `Order status updated to ${status}.`;
+}",0.825321071823791,0.7737412691986323,0.6487639307530383
+text-embedding-ada-002,"function findMax(numbers: number[]): number | null {
+    if (numbers.length === 0) return null;
+    return Math.max(...numbers);
+}",0.8500171524600582,0.7484942265149446,0.6345323319911381
+text-embedding-ada-002,"interface Animal {
+    name: string;
+    age: number;
+}
+
+class Dog implements Animal {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    bark(): string {
+        return 'Woof!';
+    }
+}",0.8711186049013138,0.821848560828713,0.6763648105225191

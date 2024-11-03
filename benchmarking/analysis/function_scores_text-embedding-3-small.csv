@@ -1,0 +1,63 @@
+model,code,similar_score,moderately_similar_score,not_similar_score
+text-embedding-3-small,"function greetUser(name: string): string {
+    return `Hello, ${name}!`;
+}",0.7286712652722708,0.37059250115549414,0.07938342370665122
+text-embedding-3-small,"interface Person {
+    name: string;
+    age: number;
+    isEmployed: boolean;
+}
+
+const person: Person = {
+    name: 'Alice',
+    age: 25,
+    isEmployed: true
+};",0.6514200849127452,0.44831445634163647,0.19690862063997128
+text-embedding-3-small,"function calculateSum(numbers: number[]): number {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}",0.6802239782102038,0.42571770769719497,0.05489144973274836
+text-embedding-3-small,"class Car {
+    private speed: number;
+
+    constructor(speed: number) {
+        this.speed = speed;
+    }
+
+    accelerate(amount: number): void {
+        this.speed += amount;
+    }
+
+    getSpeed(): number {
+        return this.speed;
+    }
+}",0.7303719720302442,0.5936724194567586,0.1574085509593616
+text-embedding-3-small,"function isEven(num: number): boolean {
+    return num % 2 === 0;
+}",0.6978589384411068,0.39164597423437875,0.2784477281155719
+text-embedding-3-small,"type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'canceled';
+
+function updateOrderStatus(status: OrderStatus): string {
+    return `Order status updated to ${status}.`;
+}",0.6581599998898857,0.4992357746655134,0.008190763072526993
+text-embedding-3-small,"function findMax(numbers: number[]): number | null {
+    if (numbers.length === 0) return null;
+    return Math.max(...numbers);
+}",0.6366671759839814,0.3567088834114608,0.12987578547562983
+text-embedding-3-small,"interface Animal {
+    name: string;
+    age: number;
+}
+
+class Dog implements Animal {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    bark(): string {
+        return 'Woof!';
+    }
+}",0.6243165913864166,0.5215567251061337,0.13500201959952193
