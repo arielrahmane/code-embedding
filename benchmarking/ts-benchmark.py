@@ -4,8 +4,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 import torch
 
 # Load embedding model
-model_prefix_name = "microsoft/"
-model_base_name = "graphcodebert-base"
+model_prefix_name = "Salesforce/"
+model_base_name = "codet5-base"
 model_name = model_prefix_name + model_base_name
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
@@ -13,7 +13,12 @@ pooling_strategy = "cls"
 
 def get_embedding(text, pooling_strategy="mean"):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
-    outputs = model(**inputs)
+
+    # For codet5-base
+    decoder_input_ids = torch.tensor([[tokenizer.pad_token_id]])
+    outputs = model(**inputs, decoder_input_ids=decoder_input_ids)
+
+    # outputs = model(**inputs)
     if pooling_strategy == "mean":
         embedding = outputs.last_hidden_state.mean(dim=1)
     elif pooling_strategy == "cls":
